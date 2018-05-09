@@ -1,21 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
-
-const Main = styled.div`
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  width: 100%;
-`
+import Header from "./components/Header/Header";
 
 export default class App extends React.Component {
   render () {
     return (
       <Main>
-        Shooooort
+        <Content>
+          <Header />
+        </Content>
       </Main>
     )
   }
 }
+
+const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+`
+
+const Content = styled.div`
+  width: 660px;
+  padding: 20px;
+`
