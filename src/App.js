@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import Header from "./components/Header/Header";
+import SearchBar from "./components/SearchBar/SearchBar";
+import colors from './styles/color';
 
 export default class App extends React.Component {
   render () {
@@ -8,6 +10,7 @@ export default class App extends React.Component {
       <Main>
         <Content>
           <Header />
+          <SearchBar />
         </Content>
       </Main>
     )
@@ -19,6 +22,7 @@ const Main = styled.div`
   justify-content: center;
   height: 100vh;
   width: 100%;
+  color: ${colors.primaryText};
 `
 
 const Content = styled.div`
