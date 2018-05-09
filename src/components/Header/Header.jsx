@@ -18,14 +18,16 @@ const Main = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-`
+`;
 
 const Tittle = styled.h1`
   color: ${colors.accent};
+  font-family: 'Montserrat', sans-serif;
   font-size: 47px;
-`
+  text-decoration: underline;
+`;
 
 const Desc = styled.span`
-  font-size: 14px;
   color: ${colors.secondaryText};
-`
+  font-size: 14px;
+`;

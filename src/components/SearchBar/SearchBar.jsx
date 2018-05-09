@@ -2,6 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import colors from '../../styles/color';
 
+// It's not the perfect regex, but solve the basic problem
+const re = /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
+
 export default class SearchBar extends React.Component {
   constructor() {
     super();
@@ -19,6 +22,7 @@ export default class SearchBar extends React.Component {
 
   render () {
     const { url } = this.state;
+    const isValidUrl = !!url.match(re);
     return (
       <Main>
         <Input
@@ -26,7 +30,7 @@ export default class SearchBar extends React.Component {
           value={url}
           onChange={this.handleInputChange}
         />
-        <Button>Shorthen this link</Button>
+        <Button disabled={!isValidUrl}>Shorthen this link</Button>
       </Main>
     )
   }
@@ -50,6 +54,7 @@ const Input = styled.input`
 const Button = styled.button`
   border-radius: 3px;
   padding: 10px;
-  color: #FFF;
-  background-color: ${colors.accent};
+  color: ${p => p.disabled ? colors.disabledText : '#FFF'};
+  background-color: ${p => p.disabled ? colors.disabledBackground : colors.accent};
+  transition: background-color 0.5s ease;
 `;
