@@ -1,0 +1,26 @@
+/* ------------------------------------------
+   Application Root Provider
+--------------------------------------------- */
+import React, { Component } from 'react'
+import createBrowserHistory from 'history/createBrowserHistory'
+import { Provider } from 'react-redux'
+import { ConnectedRouter } from 'react-router-redux'
+import createStore from '../../state/createStore'
+import App from '../../App'
+
+export default class RootContainer extends Component {
+  constructor (props) {
+    super(props)
+    this.history = createBrowserHistory()
+    this.store = createStore(this.history, {})
+  }
+  render () {
+    return (
+      <Provider history={this.history} store={this.store}>
+        <ConnectedRouter history={this.history}>
+          <App history={this.history} />
+        </ConnectedRouter>
+      </Provider>
+    )
+  }
+}

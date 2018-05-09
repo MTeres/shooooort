@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["standard", "plugin:react/recommended"],
+  "plugins": ["react", "standard"],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 2017,
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "rules": {
+    "react/display-name": 0,
+    "react/jsx-indent-props": [2, 2],
+    "react/jsx-indent": [2, 2]
+  }
+}
