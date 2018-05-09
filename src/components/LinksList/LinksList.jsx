@@ -6,14 +6,14 @@ export default class LinksList extends React.Component {
   render () {
     return (
       <Main>
-        <ClearContainer>Previously shortened by you</ClearContainer>
-        <ListContainer>
+        <ClearWrapper>Previously shortened by you<ClearButton>Clear history</ClearButton></ClearWrapper>
+        <ListWrapper>
           <Header>
             <h1>link</h1>
             <h1>visits</h1>
             <h1>last visited</h1>
           </Header>
-        </ListContainer>
+        </ListWrapper>
       </Main>
     )
   }
@@ -24,19 +24,26 @@ const Main = styled.div`
   flex-direction: column;
 `;
 
-const ClearContainer = styled.div`
+const ClearWrapper = styled.div`
   display: flex;
   font-size: 16px;
+  font-weight: 400;
 `;
 
-const ListContainer = styled.div`
+const ClearButton = styled.button`
+  color: ${colors.accent};
+  font-size: 14px;
+  margin-left: 20px;
+`;
+
+const ListWrapper = styled.div`
   margin-top: 20px;
 `;
 
 const Header = styled.div`
-  text-transform: uppercase;
   display: flex;
   justify-content: space-between;
+  text-transform: uppercase;
   
   h1 {
     color: ${colors.secondaryText};

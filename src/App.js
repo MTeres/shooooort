@@ -11,8 +11,12 @@ export default class App extends React.Component {
       <Main>
         <Content>
           <Header />
-          <SearchBar />
-          <LinksList />
+          <SearchBarWrapper>
+            <SearchBar />
+          </SearchBarWrapper>
+          <LinksListWrapper>
+            <LinksList />
+          </LinksListWrapper>
         </Content>
       </Main>
     )
@@ -31,3 +35,11 @@ const Content = styled.div`
   width: 660px;
   padding: 20px;
 `
+
+const SearchBarWrapper = styled.div`
+  margin-top: 40px
+`;
+
+const LinksListWrapper = styled.div`
+  margin-top: 60px
+`;
