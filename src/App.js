@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import Header from "./components/Header/Header";
-import SearchBar from "./components/SearchBar/SearchBar";
-import colors from './styles/color';
-import LinksList from "./components/LinksList/LinksList";
+import Header from './components/Header/Header'
+import SearchBar from './components/SearchBar/SearchBar'
+import colors from './styles/color'
+import LinksList from './components/LinksList/LinksList'
 
 export default class App extends React.Component {
   render () {

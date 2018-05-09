@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import colors from '../../styles/color';
+import colors from '../../styles/color'
 
 export default class LinksList extends React.Component {
   render () {
@@ -22,23 +22,23 @@ export default class LinksList extends React.Component {
 const Main = styled.div`
   display: flex;
   flex-direction: column;
-`;
+`
 
 const ClearWrapper = styled.div`
   display: flex;
   font-size: 16px;
   font-weight: 400;
-`;
+`
 
 const ClearButton = styled.button`
   color: ${colors.accent};
   font-size: 14px;
   margin-left: 20px;
-`;
+`
 
 const ListWrapper = styled.div`
   margin-top: 20px;
-`;
+`
 
 const Header = styled.div`
   display: flex;
@@ -54,4 +54,4 @@ const Header = styled.div`
       width: 55%;
     }
   }
-`;
+`
