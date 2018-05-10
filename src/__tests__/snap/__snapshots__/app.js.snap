@@ -1,0 +1,99 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders item correct: link-with-0-visits 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+.c1 {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-weight: 400;
+  overflow: hidden;
+  width: 55%;
+  color: #AAA;
+}
+
+.c1 h3 {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.c2 h1 {
+  color: #555;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.c2 span {
+  color: #EB4A42;
+}
+
+.c3 {
+  width: 41px;
+  height: 16px;
+  text-align: center;
+}
+
+.c4 {
+  width: 85px;
+  min-height: 16px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  text-align: center;
+}
+
+<div
+  className="c0"
+>
+  <div
+    className="c1"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+    onMouseLeave={[Function]}
+  >
+    <div
+      className="c2"
+    >
+      <h1>
+        shooooort.com/
+        <span>
+          oV9VC1
+        </span>
+      </h1>
+    </div>
+    <h3>
+      google.com
+    </h3>
+  </div>
+  <div
+    className="c3"
+  >
+    0
+  </div>
+  <div
+    className="c4"
+  >
+    Never visited
+  </div>
+</div>
+`;

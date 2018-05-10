@@ -20,7 +20,7 @@ export default class LinkFragment extends React.Component {
     const { hover } = this.state
     return (
       <Main>
-        <CopyToClipboard text={`http://shooooort.com/${link.shortcode}`}>
+        <CopyToClipboard text={`https://impraise-shorty.herokuapp.com/${link.shortcode}`}>
           <LinkWrapper hover={hover} onMouseEnter={() => this.setState({ hover: true })} onMouseLeave={() => this.setState({ hover: false })}>
             <Link>
               <h1>shooooort.com/
@@ -93,8 +93,9 @@ const RedirectCount = styled.div`
 `
 
 const Last = styled.div`
-  width: auto;
-  height: 16px;
+  width: 85px;
+  min-height: 16px;
+  height: fit-content;
   text-align: center;
   ${p => p.isLoading && css`
     background-color: ${colors.primaryText};

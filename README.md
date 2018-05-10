@@ -5,17 +5,17 @@
 Simple front-end for a URL shortener
 
 ## Tasks
-* [ ] e2e tests
 * [ ] Handle error on requests
-* [ ] Local storage service
-* [ ] snapshot tests
 * [x] Add new link
 * [x] Clear links
 * [x] Copy link
 * [x] Design
+* [x] e2e tests
 * [x] Loading system
+* [x] Local storage service
 * [x] Proxy configuration (devServer)
 * [x] Responsible
+* [x] snapshot tests
 * [x] Update links
     
 ## Main dependencies
