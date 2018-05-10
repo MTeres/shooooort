@@ -7,7 +7,7 @@ Simple front-end for a URL shortener
 ## Tasks
 * [ ] e2e tests
 * [ ] Handle error on requests
-* [ ] Local Storage Service
+* [ ] Local storage service
 * [ ] snapshot tests
 * [x] Add new link
 * [x] Clear links
