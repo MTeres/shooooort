@@ -1,4 +1,5 @@
 import { createReducer } from '../utils'
+import { deletetShortCodeObject, getShortCodeObject, setShortCodeObject } from '../localStorage'
 const ACTION_ADD_REQUEST = 'links.action.add.request'
 const ACTION_ADD_SUCCESS = 'links.action.add.success'
 const ACTION_ADD_ERROR = 'links.action.add.error'
@@ -11,7 +12,7 @@ const ACTION_CLEAR = 'links.action.clear'
         Reducer
 * ----------------------------------------- */
 const initialState = {
-  objects: {},
+  objects: {...getShortCodeObject()},
   isAdding: false
 }
 
@@ -23,6 +24,10 @@ const onAddLinkRequest = (state) => {
 }
 
 const onAddLinkSuccess = (state, { payload: { shortcode, url } }) => {
+  setShortCodeObject({
+    ...getShortCodeObject(),
+    [shortcode]: {shortcode: shortcode, url: url}
+  })
   return {
     ...state,
     isAdding: false,
@@ -47,6 +52,13 @@ const onUpdateLinkRequest = (state, { payload: { shortcode } }) => {
 }
 
 const onUpdateLinkSuccess = (state, { payload: {shortcode, data} }) => {
+  setShortCodeObject({
+    ...getShortCodeObject(),
+    [shortcode]: {
+      ...getShortCodeObject()[shortcode],
+      ...data
+    }
+  })
   return {
     ...state,
     isAdding: false,
@@ -62,6 +74,7 @@ const onUpdateLinkSuccess = (state, { payload: {shortcode, data} }) => {
 }
 
 const onClear = (state) => {
+  deletetShortCodeObject()
   return {
     ...state,
     objects: {}
