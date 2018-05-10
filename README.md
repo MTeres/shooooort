@@ -14,6 +14,7 @@ Simple front-end for a URL shortener
 * [x] Copy link
 * [x] Design
 * [x] Loading system
+* [x] Proxy configuration (devServer)
 * [x] Responsible
 * [x] Update links
     
