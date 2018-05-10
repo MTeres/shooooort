@@ -56,10 +56,11 @@ const LinkWrapper = styled.div`
   overflow: hidden;
   width: 55%;
   color: ${colors.secondaryText};
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
-   
+   h3 {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+   }
 `
 
 const Link = styled.div`
