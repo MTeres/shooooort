@@ -4,6 +4,19 @@
 
 Simple front-end for a URL shortener
 
+## TaskList
+* [ ] e2e tests
+* [ ] Handle error on requests
+* [ ] Local Storage Service
+* [ ] snapshot tests
+* [x] Add new link
+* [x] Clear links
+* [x] Copy link
+* [x] Design
+* [x] Loading system
+* [x] Responsible
+* [x] Update links
+    
 ## Main dependencies
  - [React v16](https://www.npmjs.com/package/react)
  - [Redux](https://www.npmjs.com/package/redux)
