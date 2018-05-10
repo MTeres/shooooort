@@ -5,7 +5,7 @@ const colors = {
   lightBackground: '#EAEAEA',
   primaryText: '#555',
   secondaryText: '#AAA',
-  unimportant: '#CCC',
-};
+  unimportant: '#CCC'
+}
 
-export default colors;
+export default colors

@@ -1,18 +1,29 @@
 import React from 'react'
 import styled from 'styled-components'
+import LinkFragment from './LinkFragment/LinkFragment'
 import colors from '../../styles/color'
 
 export default class LinksList extends React.Component {
   render () {
+    const { linksList } = this.props
     return (
       <Main>
-        <ClearWrapper>Previously shortened by you<ClearButton>Clear history</ClearButton></ClearWrapper>
+        <ClearWrapper>Previously shortened by you
+          {!!linksList.length &&
+            <ClearButton> Clear history</ClearButton>
+          }
+        </ClearWrapper>
         <ListWrapper>
           <Header>
             <h1>link</h1>
             <h1>visits</h1>
             <h1>last visited</h1>
           </Header>
+          <Content>
+            {linksList.map(el => (
+              <LinkFragment key={el.shortcode} link={el} />
+            ))}
+          </Content>
         </ListWrapper>
       </Main>
     )
@@ -38,6 +49,14 @@ const ClearButton = styled.button`
 
 const ListWrapper = styled.div`
   margin-top: 20px;
+`
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  > * {
+    padding-top: 20px;
+  }
 `
 
 const Header = styled.div`

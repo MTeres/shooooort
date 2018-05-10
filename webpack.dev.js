@@ -6,6 +6,13 @@ module.exports = merge(common, {
   devServer: {
     contentBase: './dist',
     historyApiFallback: true,
-    port: 8081
+    port: 8081,
+    proxy: {
+      '/shorten': {
+        target: 'https://impraise-shorty.herokuapp.com/',
+        changeOrigin: true,
+        secure: false,
+      }
+    }
   }
 })

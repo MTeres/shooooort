@@ -6,7 +6,7 @@ import createBrowserHistory from 'history/createBrowserHistory'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'react-router-redux'
 import createStore from '../../state/createStore'
-import App from '../../App'
+import AppContainer from '../App/App'
 
 export default class RootContainer extends Component {
   constructor (props) {
@@ -18,7 +18,7 @@ export default class RootContainer extends Component {
     return (
       <Provider history={this.history} store={this.store}>
         <ConnectedRouter history={this.history}>
-          <App history={this.history} />
+          <AppContainer history={this.history} />
         </ConnectedRouter>
       </Provider>
     )

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types';
 import styled from 'styled-components'
 import colors from '../../styles/color'
 
@@ -12,16 +13,19 @@ export default class SearchBar extends React.Component {
       url: ''
     }
   }
-
+  static propTypes = {
+    onSubmitLink: PropTypes.func.isRequired,
+    isAdding: PropTypes.bool.isRequired
+  }
   handleInputChange = (e) => {
     const { value } = e.currentTarget
     this.setState({
       url: value
     })
   }
-
   render () {
     const { url } = this.state
+    const { onSubmitLink, isAdding } = this.props
     const isValidUrl = !!url.match(re)
     return (
       <Main>
@@ -30,7 +34,9 @@ export default class SearchBar extends React.Component {
           value={url}
           onChange={this.handleInputChange}
         />
-        <Button disabled={!isValidUrl}>Shorthen this link</Button>
+        <Button disabled={!isValidUrl || isAdding} onClick={() => onSubmitLink(url)}>
+          {isAdding ? 'Adding...' : 'Shorthen this link'}
+        </Button>
       </Main>
     )
   }
