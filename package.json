@@ -47,7 +47,8 @@
     "style-loader": "^0.21.0",
     "styled-components": "^2.4.0",
     "testcafe": "^0.19.2",
-    "testcafe-react-selectors": "^2.0.0"
+    "testcafe-react-selectors": "^2.0.0",
+    "time-ago": "^0.2.1"
   },
   "devDependencies": {
     "babel-eslint": "^8.1.2",
