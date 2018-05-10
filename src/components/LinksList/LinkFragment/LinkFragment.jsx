@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import styled, { css, keyframes } from 'styled-components'
 import colors from '../../../styles/color'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
+import TimeAgo from 'time-ago'
 
 export default class LinkFragment extends React.Component {
   constructor () {
@@ -36,7 +37,7 @@ export default class LinkFragment extends React.Component {
           {link.redirectCount}
         </RedirectCount>
         <Last isLoading={link.isUpdating}>
-          {link.lastSeenDate ? link.lastSeenDate : 'Never visited'}
+          {link.lastSeenDate ? TimeAgo.ago(new Date(link.lastSeenDate)) : 'Never visited'}
         </Last>
       </Main>
     )
@@ -92,7 +93,7 @@ const RedirectCount = styled.div`
 `
 
 const Last = styled.div`
-  width: 82px;
+  width: auto;
   height: 16px;
   text-align: center;
   ${p => p.isLoading && css`
