@@ -77,7 +77,7 @@ const Link = styled.div`
 const CopyMessage = styled.span`
   color: ${colors.accent};
   margin-left: auto;
-  margin-right: 5px;
+  margin-right: 10px;
 `
 
 const RedirectCount = styled.div`

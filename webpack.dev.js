@@ -11,7 +11,7 @@ module.exports = merge(common, {
       '/shorten': {
         target: 'https://impraise-shorty.herokuapp.com/',
         changeOrigin: true,
-        secure: false,
+        secure: false
       }
     }
   }

@@ -17,6 +17,12 @@ export default class SearchBar extends React.Component {
     onSubmitLink: PropTypes.func.isRequired,
     isAdding: PropTypes.bool.isRequired
   }
+  handleSubmitLink = () => {
+    const { url } = this.state
+    const { onSubmitLink } = this.props
+    onSubmitLink(url)
+    this.setState({ url: '' })
+  }
   handleInputChange = (e) => {
     const { value } = e.currentTarget
     this.setState({
@@ -25,7 +31,7 @@ export default class SearchBar extends React.Component {
   }
   render () {
     const { url } = this.state
-    const { onSubmitLink, isAdding } = this.props
+    const { isAdding } = this.props
     const isValidUrl = !!url.match(re)
     return (
       <Main>
@@ -34,7 +40,7 @@ export default class SearchBar extends React.Component {
           value={url}
           onChange={this.handleInputChange}
         />
-        <Button disabled={!isValidUrl || isAdding} onClick={() => onSubmitLink(url)}>
+        <Button disabled={!isValidUrl || isAdding} onClick={this.handleSubmitLink}>
           {isAdding ? 'Adding...' : 'Shorthen this link'}
         </Button>
       </Main>

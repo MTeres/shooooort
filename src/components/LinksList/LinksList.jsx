@@ -1,16 +1,25 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import LinkFragment from './LinkFragment/LinkFragment'
 import colors from '../../styles/color'
 
 export default class LinksList extends React.Component {
+  static propTypes = {
+    linksList: PropTypes.arrayOf(PropTypes.object).isRequired,
+    handleUpdateLinks: PropTypes.func.isRequired,
+    handleClearLinks: PropTypes.func.isRequired
+  }
   render () {
-    const { linksList } = this.props
+    const { linksList, handleClearLinks, handleUpdateLinks } = this.props
     return (
       <Main>
         <ClearWrapper>Previously shortened by you
           {!!linksList.length &&
-            <ClearButton> Clear history</ClearButton>
+            <TextButton onClick={handleClearLinks}>Clear history</TextButton>
+          }
+          {!!linksList.length &&
+            <TextButton onClick={handleUpdateLinks}>Update info</TextButton>
           }
         </ClearWrapper>
         <ListWrapper>
@@ -41,7 +50,7 @@ const ClearWrapper = styled.div`
   font-weight: 400;
 `
 
-const ClearButton = styled.button`
+const TextButton = styled.button`
   color: ${colors.accent};
   font-size: 14px;
   margin-left: 20px;

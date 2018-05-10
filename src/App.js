@@ -9,10 +9,12 @@ import LinksList from './components/LinksList/LinksList'
 export default class App extends React.Component {
   static propTypes = {
     handleAddLink: PropTypes.func.isRequired,
-    links: PropTypes.object.isRequired
+    links: PropTypes.object.isRequired,
+    handleUpdateLinks: PropTypes.func.isRequired,
+    handleClearLinks: PropTypes.func.isRequired
   }
   render () {
-    const { handleAddLink, links } = this.props
+    const { handleAddLink, handleClearLinks, handleUpdateLinks, links } = this.props
     const linksList = Object.values(links.objects)
     return (
       <Main>
@@ -22,7 +24,11 @@ export default class App extends React.Component {
             <SearchBar onSubmitLink={handleAddLink} isAdding={links.isAdding}/>
           </SearchBarWrapper>
           <LinksListWrapper>
-            <LinksList linksList={linksList} />
+            <LinksList
+              linksList={linksList}
+              handleClearLinks={handleClearLinks}
+              handleUpdateLinks={handleUpdateLinks}
+            />
           </LinksListWrapper>
         </Content>
       </Main>
