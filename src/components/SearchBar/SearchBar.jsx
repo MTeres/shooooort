@@ -51,6 +51,9 @@ export default class SearchBar extends React.Component {
 const Main = styled.div`
   display: flex;
   justify-content: space-between;
+  @media(max-width: 500px) {
+    flex-direction: column;
+  }
 `
 
 const Input = styled.input`
@@ -61,6 +64,18 @@ const Input = styled.input`
   padding: .6rem;
   padding-left: 10px;
   width: 460px;
+  
+  @media(max-width: 650px) {
+    width: 380px;
+  }
+  
+  @media(max-width: 560px) {
+    width: 320px;
+  }
+  
+  @media(max-width: 500px) {
+    width: 100%
+  }
 `
 
 const Button = styled.button`

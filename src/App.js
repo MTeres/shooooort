@@ -45,7 +45,7 @@ const Main = styled.div`
 `
 
 const Content = styled.div`
-  max-width: 660px;
+  width: 660px;
   padding: 20px;
 `
 

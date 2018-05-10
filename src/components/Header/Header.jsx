@@ -25,9 +25,17 @@ const Tittle = styled.h1`
   font-family: 'Montserrat', sans-serif;
   font-size: 47px;
   text-decoration: underline;
+  
+  @media(max-width: 520px) {
+    font-size: 35px;
+  }
 `
 
 const Desc = styled.span`
   color: ${colors.secondaryText};
   font-size: 14px;
+  
+  @media(max-width: 450px) {
+    display: none;
+  }
 `
