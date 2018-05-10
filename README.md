@@ -4,7 +4,7 @@
 
 Simple front-end for a URL shortener
 
-## TaskList
+## Tasks
 * [ ] e2e tests
 * [ ] Handle error on requests
 * [ ] Local Storage Service
