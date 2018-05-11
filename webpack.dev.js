@@ -7,11 +7,22 @@ module.exports = merge(common, {
     contentBase: './dist',
     historyApiFallback: true,
     port: 8081,
+    headers: {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+    },
     proxy: {
       '/shorten': {
-        target: 'https://impraise-shorty.herokuapp.com/',
+        target: 'http://localhost:3001/',
         changeOrigin: true,
-        secure: false
+        secure: false,
+        logLevel: 'debug'
+      },
+      '/**/stats': {
+        target: 'http://localhost:3001/',
+        changeOrigin: true,
+        secure: true,
+        logLevel: 'debug'
       }
     }
   }

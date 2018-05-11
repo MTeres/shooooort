@@ -4,7 +4,9 @@
   "main": "index.js",
   "author": "MTeres",
   "scripts": {
-    "start": "webpack-dev-server --open --config webpack.dev.js",
+    "init-webpack": "webpack-dev-server --open --config webpack.dev.js",
+    "init-proxy": "node util.proxy.js",
+    "start": "npm run init-proxy & npm run init-webpack",
     "build": "webpack --config webpack.prod.js",
     "test:e2e": "testcafe chrome src/__tests__/e2e/app.js --app \"webpack-dev-server --config webpack.dev.js\"",
     "test:snap": "jest src/__tests__/snap/app.js"

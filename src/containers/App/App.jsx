@@ -37,7 +37,8 @@ class AppContainer extends Component {
   getLinkInfo (shortcode) {
     return axios({
       method: 'get',
-      url: `https://impraise-shorty.herokuapp.com/${shortcode}/stats`
+      url: `/${shortcode}/stats`,
+      proxy: 'localhost:8081'
     })
   }
 
